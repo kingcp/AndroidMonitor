@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
         applicationId "com.king.cp.monitor"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -20,6 +20,7 @@ android {
                 cppFlags "-std=c++14"
             }
         }
+
     }
 
     buildTypes {
@@ -42,6 +43,7 @@ android {
         jvmTarget = '1.8'
     }
     ndkVersion '21.1.6352462'
+
 }
 
 dependencies {

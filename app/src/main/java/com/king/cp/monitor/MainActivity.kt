@@ -3,6 +3,8 @@ package com.king.cp.monitor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.king.cp.monitor.crash.CrashHandlerListener
+import com.king.cp.monitor.crash.NativeCrashMonitor
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,6 +13,14 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to a native method
         findViewById<TextView>(R.id.sample_text).text = stringFromJNI()
+
+        val nativeCrashMonitor = NativeCrashMonitor()
+
+        nativeCrashMonitor.init(object:CrashHandlerListener{
+            override fun onCrash(threadName: String, error: Error) {
+                nativeCrashMonitor.getStackInfoByThreadName(threadName)
+            }
+        })
     }
 
     /**
