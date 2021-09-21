@@ -1,0 +1,91 @@
+Process: com.king.cp.monitor
+PID: 26920
+UID: 10134
+Flags: 0x30c8bf46
+Package: com.king.cp.monitor v1 (1.0)
+Foreground: Yes
+Build: google/sdk_gphone_x86/generic_x86:10/QSR1.200715.002/6695061:userdebug/dev-keys
+
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'google/sdk_gphone_x86/generic_x86:10/QSR1.200715.002/6695061:userdebug/dev-keys'
+Revision: '0'
+ABI: 'x86'
+Timestamp: 2021-09-21 15:22:25+0800
+pid: 26920, tid: 26920, name: king.cp.monitor  >>> com.king.cp.monitor <<<
+uid: 10134
+signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0
+Cause: null pointer dereference
+    eax 00000028  ebx cc6badb0  ecx 00000000  edx 00000004
+    edi cc6aea41  esi cc6ae9fb
+    ebp ff9def38  esp ff9def00  eip cc68d1f4
+
+backtrace:
+      #00 pc 0000a1f4  /data/app/com.king.cp.monitor-NGOJOzP7FXcXnQb0NBe6ZA==/lib/x86/libnative-lib.so (Java_com_king_cp_monitor_crash_NativeCrashMonitor_nativeCrash+84) (BuildId: f0de8a47ded9bd9ccd20d36b1b80e2072063fc3c)
+      #01 pc 00144f67  /apex/com.android.runtime/lib/libart.so (art_quick_generic_jni_trampoline+71) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #02 pc 0013e9a2  /apex/com.android.runtime/lib/libart.so (art_quick_invoke_static_stub+418) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #03 pc 00149a7a  /apex/com.android.runtime/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+298) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #04 pc 00332502  /apex/com.android.runtime/lib/libart.so (art::interpreter::ArtInterpreterToCompiledCodeBridge(art::Thread*, art::ArtMethod*, art::ShadowFrame*, unsigned short, art::JValue*)+386) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #05 pc 0032c19c  /apex/com.android.runtime/lib/libart.so (bool art::interpreter::DoCall<false, false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, art::JValue*)+988) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #06 pc 00684d73  /apex/com.android.runtime/lib/libart.so (MterpInvokeStatic+643) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #07 pc 001389a1  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_static+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #08 pc 00218156  [anon:dalvik-classes.dex extracted in memory from /data/app/com.king.cp.monitor-NGOJOzP7FXcXnQb0NBe6ZA==/base.apk] (com.king.cp.monitor.MainActivity$onCreate$5.onClick+14)
+      #09 pc 0068382c  /apex/com.android.runtime/lib/libart.so (MterpInvokeInterface+1980) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #10 pc 00138a21  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_interface+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #11 pc 001a0c62  /system/framework/framework.jar (android.view.View.performClick+34)
+      #12 pc 00682a0c  /apex/com.android.runtime/lib/libart.so (MterpInvokeSuper+2460) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #13 pc 001388a1  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_super+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #14 pc 001e6ad6  [anon:dalvik-classes.dex extracted in memory from /data/app/com.king.cp.monitor-NGOJOzP7FXcXnQb0NBe6ZA==/base.apk] (com.google.android.material.button.MaterialButton.performClick+6)
+      #15 pc 00681b4c  /apex/com.android.runtime/lib/libart.so (MterpInvokeVirtual+1612) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #16 pc 00138821  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_virtual+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #17 pc 001a0c96  /system/framework/framework.jar (android.view.View.performClickInternal+6)
+      #18 pc 0068461c  /apex/com.android.runtime/lib/libart.so (MterpInvokeDirect+1324) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #19 pc 00138921  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_direct+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #20 pc 0019c6a4  /system/framework/framework.jar (android.view.View.access$3500)
+      #21 pc 00684fdc  /apex/com.android.runtime/lib/libart.so (MterpInvokeStatic+1260) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #22 pc 001389a1  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_static+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #23 pc 0017d0dc  /system/framework/framework.jar (android.view.View$PerformClick.run+16)
+      #24 pc 0068382c  /apex/com.android.runtime/lib/libart.so (MterpInvokeInterface+1980) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #25 pc 00138a21  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_interface+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #26 pc 002f5a18  /system/framework/framework.jar (android.os.Handler.handleCallback+4)
+      #27 pc 00684fdc  /apex/com.android.runtime/lib/libart.so (MterpInvokeStatic+1260) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #28 pc 001389a1  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_static+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #29 pc 002f5884  /system/framework/framework.jar (android.os.Handler.dispatchMessage+8)
+      #30 pc 00681b4c  /apex/com.android.runtime/lib/libart.so (MterpInvokeVirtual+1612) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #31 pc 00138821  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_virtual+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #32 pc 00319f42  /system/framework/framework.jar (android.os.Looper.loop+466)
+      #33 pc 00684fdc  /apex/com.android.runtime/lib/libart.so (MterpInvokeStatic+1260) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #34 pc 001389a1  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_static+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #35 pc 00189476  /system/framework/framework.jar (android.app.ActivityThread.main+194)
+      #36 pc 002f8e0a  /apex/com.android.runtime/lib/libart.so (_ZN3art11interpreterL7ExecuteEPNS_6ThreadERKNS_20CodeItemDataAccessorERNS_11ShadowFrameENS_6JValueEbb.llvm.1175793267244191248+298) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #37 pc 002ffcc5  /apex/com.android.runtime/lib/libart.so (art::interpreter::EnterInterpreterFromEntryPoint(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*)+181) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #38 pc 0066fc49  /apex/com.android.runtime/lib/libart.so (artQuickToInterpreterBridge+1209) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #39 pc 0014503d  /apex/com.android.runtime/lib/libart.so (art_quick_to_interpreter_bridge+77) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #40 pc 0013e9a2  /apex/com.android.runtime/lib/libart.so (art_quick_invoke_static_stub+418) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #41 pc 00149a7a  /apex/com.android.runtime/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+298) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #42 pc 0055a563  /apex/com.android.runtime/lib/libart.so (art::(anonymous namespace)::InvokeWithArgArray(art::ScopedObjectAccessAlreadyRunnable const&, art::ArtMethod*, art::(anonymous namespace)::ArgArray*, art::JValue*, char const*)+99) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #43 pc 0055c37f  /apex/com.android.runtime/lib/libart.so (art::InvokeMethod(art::ScopedObjectAccessAlreadyRunnable const&, _jobject*, _jobject*, _jobject*, unsigned int)+1327) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #44 pc 004c91a3  /apex/com.android.runtime/lib/libart.so (art::Method_invoke(_JNIEnv*, _jobject*, _jobject*, _jobjectArray*)+83) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #45 pc 000c6bf8  /system/framework/x86/boot.oat (art_jni_trampoline+168) (BuildId: 7913dbaef2e8d9971cb7619ef0d566987f8326a7)
+      #46 pc 0013e7d2  /apex/com.android.runtime/lib/libart.so (art_quick_invoke_stub+338) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #47 pc 00149a69  /apex/com.android.runtime/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+281) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #48 pc 00332502  /apex/com.android.runtime/lib/libart.so (art::interpreter::ArtInterpreterToCompiledCodeBridge(art::Thread*, art::ArtMethod*, art::ShadowFrame*, unsigned short, art::JValue*)+386) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #49 pc 0032c19c  /apex/com.android.runtime/lib/libart.so (bool art::interpreter::DoCall<false, false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, art::JValue*)+988) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #50 pc 006818dd  /apex/com.android.runtime/lib/libart.so (MterpInvokeVirtual+989) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #51 pc 00138821  /apex/com.android.runtime/lib/libart.so (mterp_op_invoke_virtual+33) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #52 pc 0034cd0e  /system/framework/framework.jar (com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run+22)
+      #53 pc 002f8e0a  /apex/com.android.runtime/lib/libart.so (_ZN3art11interpreterL7ExecuteEPNS_6ThreadERKNS_20CodeItemDataAccessorERNS_11ShadowFrameENS_6JValueEbb.llvm.1175793267244191248+298) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #54 pc 002ffcc5  /apex/com.android.runtime/lib/libart.so (art::interpreter::EnterInterpreterFromEntryPoint(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*)+181) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #55 pc 0066fc49  /apex/com.android.runtime/lib/libart.so (artQuickToInterpreterBridge+1209) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #56 pc 0014503d  /apex/com.android.runtime/lib/libart.so (art_quick_to_interpreter_bridge+77) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #57 pc 00998b58  /system/framework/x86/boot-framework.oat (com.android.internal.os.ZygoteInit.main+1816) (BuildId: a1eb5809bcfe0069426a851c009226ed35b75223)
+      #58 pc 0013e9a2  /apex/com.android.runtime/lib/libart.so (art_quick_invoke_static_stub+418) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #59 pc 00149a7a  /apex/com.android.runtime/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+298) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #60 pc 0055a563  /apex/com.android.runtime/lib/libart.so (art::(anonymous namespace)::InvokeWithArgArray(art::ScopedObjectAccessAlreadyRunnable const&, art::ArtMethod*, art::(anonymous namespace)::ArgArray*, art::JValue*, char const*)+99) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #61 pc 0055a1fe  /apex/com.android.runtime/lib/libart.so (art::InvokeWithVarArgs(art::ScopedObjectAccessAlreadyRunnable const&, _jobject*, _jmethodID*, char*)+430) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #62 pc 004305cd  /apex/com.android.runtime/lib/libart.so (art::JNI::CallStaticVoidMethodV(_JNIEnv*, _jclass*, _jmethodID*, char*)+893) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #63 pc 003d93bf  /apex/com.android.runtime/lib/libart.so (art::(anonymous namespace)::CheckJNI::CallMethodV(char const*, _JNIEnv*, _jobject*, _jclass*, _jmethodID*, char*, art::Primitive::Type, art::InvokeType)+2847) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #64 pc 003c7509  /apex/com.android.runtime/lib/libart.so (art::(anonymous namespace)::CheckJNI::CallStaticVoidMethodV(_JNIEnv*, _jclass*, _jmethodID*, char*)+73) (BuildId: fe49ff2b6f401678e4775fb2121e4ea4)
+      #65 pc 000b25fe  /system/lib/libandroid_runtime.so (_JNIEnv::CallStaticVoidMethod(_jclass*, _jmethodID*, ...)+62) (BuildId: 3643bee2c4fb7899d7781c565843060b)
+      #66 pc 000b628a  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, android::Vector<android::String8> const&, bool)+794) (BuildId: 3643bee2c4fb7899d7781c565843060b)
+      #67 pc 00003632  /system/bin/app_process32 (main+1490) (BuildId: b7a60bc7d078521421fd5a8d201915ae)
+      #68 pc 000898e8  /apex/com.android.runtime/lib/bionic/libc.so (__libc_init+120) (BuildId: 471745f0fbbcedb3db1553d5bd6fcd8b)
