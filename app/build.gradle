@@ -18,7 +18,13 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++14"
+                //-> 编译 方式
+                abiFilters "armeabi-v7a","x86"
             }
+        }
+        //-> 生成so
+        ndk {
+            abiFilters 'armeabi-v7a','x86'
         }
 
     }

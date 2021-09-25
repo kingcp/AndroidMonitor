@@ -3,11 +3,30 @@
 //
 
 #include <unistd.h>
+#include <algorithm>
 #include "SignalHandler.h"
 #include "CrashDefine.h"
+#include "CrashAnalyser.h"
 
+// 设置额外的栈空间，让信号处理在单独的栈中处理
+void installAlternateStack(){
+    stack_t newStack;
+    stack_t oldStack;
+    memset(&newStack, 0, sizeof(newStack));
+    memset(&oldStack, 0, sizeof(oldStack));
+    static const unsigned sigaltstackSize = std::max(16384,SIGSTKSZ);
+    // 把原来的拿出来，可能会有一些其他框架已经设置，避免冲突
+    if(sigaltstack(NULL,&oldStack) == -1
+        || !oldStack.ss_sp
+        || oldStack.ss_size < sigaltstackSize){
+        newStack.ss_sp = calloc(1,sigaltstackSize);
+        newStack.ss_size = sigaltstackSize;
+        if(sigaltstack(&newStack,NULL) == -1){
+            free(newStack.ss_sp);
+        }
+    }
 
-
+}
 
 void signalPass(int code, siginfo_t *si, void *sc){
     LOGE("监听到了 native 的崩溃");
@@ -40,7 +59,7 @@ bool installSignalHandlers(){
     sigemptyset(&sa.sa_mask);
     // 指定信号处理的回调函数
     sa.sa_sigaction = signalPass;
-    sa.sa_flags = SA_ONSTACK || SA_SIGINFO;
+    sa.sa_flags = SA_ONSTACK | SA_SIGINFO;
     // 处理当前信号量的时候不关心其他的
     for(int i = 0 ; i < exceptionSignalsNumber; i++){
         sigaddset(&sa.sa_mask,exceptionSignals[i]);
@@ -54,3 +73,11 @@ bool installSignalHandlers(){
     }
     return true;
 }
+
+
+
+
+
+
+
+

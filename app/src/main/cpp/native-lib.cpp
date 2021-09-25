@@ -40,6 +40,7 @@ Java_com_king_cp_monitor_crash_NativeCrashMonitor_nativeInit(JNIEnv *env,jobject
     if(ret){
         LOGE("pthread_create error, ret: %d",ret);
     }
+    LOGE("pthread_create success, ret: %d",ret);
 }
 
 extern "C"
@@ -53,11 +54,10 @@ Java_com_king_cp_monitor_crash_NativeCrashMonitor_nativeSetup(JNIEnv *env,jobjec
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_king_cp_monitor_crash_NativeCrashMonitor_nativeCrash(JNIEnv
-* env,
-jobject thiz
-) {
-// TODO: implement nativeCrash()
+Java_com_king_cp_monitor_crash_NativeCrashMonitor_nativeCrash(JNIEnv* env,jobject thiz) {
+    LOGE("NativeCrashMonitor_nativeCrash");
+    int *num = NULL;
+    *num = 100;
 }
 
 

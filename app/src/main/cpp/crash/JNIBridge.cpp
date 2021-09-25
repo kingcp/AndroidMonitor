@@ -26,7 +26,7 @@ void JNIBridge::throwException2Java(struct native_handler_context_struct *handle
     jstring jThreadName = env->NewStringUTF(handlerContext->threadName);
     jobject javaStackInfo = env->CallStaticObjectMethod(this->nativeCrashMonitorClass,getStackInfoByThreadNameMid,jThreadName);
     const char *javaExceptionStackInfo = env->GetStringUTFChars(static_cast<jstring>(javaStackInfo), JNI_FALSE);
-    LOGE("%s",javaExceptionStackInfo);
+    LOGE("java stack : %s",javaExceptionStackInfo);
     // c++ 堆栈信息
     int frame_size = handlerContext->frame_size;
     for(int index = 0 ; index < frame_size; index++){
@@ -48,3 +48,13 @@ void JNIBridge::throwException2Java(struct native_handler_context_struct *handle
         LOGE("");
     }
 }
+
+
+
+
+
+
+
+
+
+

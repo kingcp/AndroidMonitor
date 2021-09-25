@@ -1,4 +1,4 @@
-package com.darren.optimize.day06;
+package com.king.cp.monitor.crash;
 
 import android.os.Looper;
 import android.text.TextUtils;
@@ -56,7 +56,7 @@ public class NativeCrashMonitor {
      * 根据线程名获取当前线程的堆栈信息
      */
     @Keep
-    private static String getStackInfoByThreadName(String threadName) {
+    public static String getStackInfoByThreadName(String threadName) {
         Thread thread = getThreadByName(threadName);
         StringBuilder sb = new StringBuilder();
         StackTraceElement[] stackTraceElements = thread.getStackTrace();
@@ -67,7 +67,6 @@ public class NativeCrashMonitor {
     }
 
     /**
-     * 怎么写？下次课只会讲下原理，copy 代码
      *
      * @param threadName
      * @return Thread
